@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #1c92d2, #f2fcfe);
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.menu button {
+  flex: 1;
+  padding: 20px;
+  font-size: 1.5em;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px 10px 0 0;
+}
+
+.nvidia-btn { background-color: #76b900; color: white; }
+.amd-btn { background-color: #e03a3e; color: white; }
+
+table {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+th {
+  background-color: #004080;
+  color: white;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+  border-radius: 10px 10px 0 0;
+}
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+  border-radius: 10px 10px 0 0;
+}
