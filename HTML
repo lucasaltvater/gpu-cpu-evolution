@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Histórico GPUs NVIDIA vs AMD</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1c92d2, #f2fcfe);
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #004080;
+      margin-bottom: 20px;
+    }
+    /* Menu grande */
+    .menu {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .menu button {
+      flex: 1;
+      padding: 20px;
+      font-size: 1.5em;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 10px 10px 0 0;
+    }
+    .nvidia-btn {
+      background-color: #76b900; /* verde NVIDIA */
+      color: white;
+    }
+    .amd-btn {
+      background-color: #e03a3e; /* vermelho AMD */
+      color: white;
+    }
+    .menu button:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+    .menu button.active {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    /* Barra de busca */
+    #busca {
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    /* Tabelas */
+    table {
+      width: 95%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #004080;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #d6eaf8;
+    }
+    .conteudo {
+      display: none;
+    }
+    .conteudo.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Histórico de GPUs NVIDIA vs AMD 🎮</h1>
+
+<!-- Menu grande -->
+<div class="menu">
+  <button id="btnNvidia" class="nvidia-btn active">NVIDIA</button>
+  <button id="btnAmd" class="amd-btn">AMD</button>
+</div>
+
+<!-- Barra de busca -->
+<input type="text" id="busca" placeholder="Digite para filtrar...">
+
+<!-- Conteúdo NVIDIA -->
+<div id="nvidia" class="conteudo active">
+  <h2>NVIDIA - Todas as Séries</h2>
+  <table id="tabelaNvidia">
+    <tr><th>Série</th><th>Ano</th><th>Arquitetura</th><th>Exemplos</th></tr>
+    <tr><td>RIVA 128</td><td>1997</td><td>NV3</td><td>RIVA 128</td></tr>
+    <tr><td>RIVA TNT</td><td>1998</td><td>NV4</td><td>TNT</td></tr>
+    <tr><td>RIVA TNT2</td><td>1999</td><td>NV5</td><td>TNT2 Ultra</td></tr>
+    <tr><td>GeForce 256</td><td>1999</td><td>NV10</td><td>GeForce 256</td></tr>
+    <tr><td>GeForce 2</td><td>2000</td><td>NV15</td><td>GTS, MX</td></tr>
+    <tr><td>GeForce 3</td><td>2001</td><td>NV20</td><td>Ti200, Ti500</td></tr>
+    <tr><td>GeForce 4</td><td>2002</td><td>NV25/NV28</td><td>Ti4200, MX440</td></tr>
+    <tr><td>GeForce FX</td><td>2003</td><td>NV30</td><td>FX 5200, FX 5900</td></tr>
+    <tr><td>GeForce 6</td><td>2004</td><td>NV40</td><td>6600 GT, 6800 Ultra</td></tr>
+    <tr><td>GeForce 7</td><td>2005</td><td>G70</td><td>7300 GT, 7900 GTX</td></tr>
+    <tr><td>GeForce 8</td><td>2006</td><td>G80</td><td>8800 GTX, 8600 GT</td></tr>
+    <tr><td>GeForce 9</td><td>2008</td><td>G92/G94</td><td>9600 GT, 9800 GTX</td></tr>
+    <tr><td>GeForce 200</td><td>2008</td><td>Tesla</td><td>GTX 260, GTX 280</td></tr>
+    <tr><td>GeForce 400</td><td>2010</td><td>Fermi</td><td>GTX 460, GTX 480</td></tr>
+    <tr><td>GeForce 500</td><td>2011</td><td>Fermi</td><td>GTX 560 Ti, GTX 580</td></tr>
+    <tr><td>GeForce 600</td><td>2012</td><td>Kepler</td><td>GTX 660, GTX 680</td></tr>
+    <tr><td>GeForce 700</td><td>2013</td><td>Kepler</td><td>GTX 760, GTX 780 Ti</td></tr>
+    <tr><td>GeForce 900</td><td>2014</td><td>Maxwell</td><td>GTX 960, GTX 980 Ti</td></tr>
+    <tr><td>GeForce 10</td><td>2016</td><td>Pascal</td><td>GTX 1060, GTX 1080 Ti</td></tr>
+    <tr><td>GeForce 16</td><td>2019</td><td>Turing (sem RT)</td><td>GTX 1650, GTX 1660 Ti</td></tr>
+    <tr><td>RTX 20</td><td>2018</td><td>Turing</td><td>RTX 2060, RTX 2080 Ti</td></tr>
+    <tr><td>RTX 30</td><td>2020</td><td>Ampere</td><td>RTX 3060, RTX 3090</td></tr>
+    <tr><td>RTX 40</td><td>2022</td><td>Ada Lovelace</td><td>RTX 4070, RTX 4090</td></tr>
+    <tr><td>RTX 50</td><td>2025</td><td>Blackwell</td><td>RTX 5070, RTX 5090</td></tr>
+  </table>
+</div>
+<!-- Conteúdo AMD -->
+<div id="amd" class="conteudo">
+  <h2>AMD Radeon - Todas as Séries</h2>
+  <table id="tabelaAmd">
+    <tr><th>Série</th><th>Ano</th><th>Arquitetura</th><th>Exemplos</th></tr>
+    <tr><td>Radeon DDR</td><td>2000</td><td>R100</td><td>Radeon 7200</td></tr>
+    <tr><td>Radeon 9000</td><td>2002</td><td>R200</td><td>Radeon 9700 Pro</td></tr>
+    <tr><td>Radeon X1000</td><td>2005</td><td>R500</td><td>X1800 XT, X1950 Pro</td></tr>
+    <tr><td>Radeon HD 2000</td><td>2007</td><td>TeraScale 1</td><td>HD 2900 XT</td></tr>
+    <tr><td>Radeon HD 4000</td><td>2008</td><td>TeraScale 1</td><td>HD 4870</td></tr>
+    <tr><td>Radeon HD 5000</td><td>2009</td><td>TeraScale 2</td><td>HD 5870</td></tr>
+    <tr><td>Radeon HD 6000</td><td>2010</td><td>TeraScale 2</td><td>HD 6970</td></tr>
+    <tr><td>Radeon HD 7000</td><td>2012</td><td>GCN 1ª gen</td><td>HD 7970</td></tr>
+    <tr><td>Radeon RX 400</td><td>2016</td><td>Polaris</td><td>RX 480</td></tr>
+    <tr><td>Radeon RX 500</td><td>2017</td><td>Polaris (refinado)</td><td>RX 580</td></tr>
+    <tr><td>Radeon RX Vega</td><td>2017</td><td>GCN 5ª gen</td><td>Vega 56, Vega 64</td></tr>
+    <tr><td>Radeon RX 5000</td><td>2019</td><td>RDNA 1</td><td>RX 5700 XT</td></tr>
+    <tr><td>Radeon RX 6000</td><td>2020</td><td>RDNA 2</td><td>RX 6800, RX 6900 XT</td></tr>
+    <tr><td>Radeon RX 7000</td><td>2022</td><td>RDNA 3</td><td>RX 7900 XT, RX 7900 XTX</td></tr>
+    <tr><td>Radeon RX 8000</td><td>2025</td><td>RDNA 4</td><td>RX 8700 XT, RX 8900 XTX</td></tr>
+  </table>
+</div>
+<!-- Rodapé -->
+<footer>
+  <p>&copy; 2026 - Histórico de GPUs NVIDIA vs AMD</p>
+  <p>Desenvolvido por Lucas | Dados de referência: NVIDIA & AMD</p>
+</footer>
+<!-- Menu de CPUs -->
+<div class="menu">
+  <button id="btnIntel" class="nvidia-btn active">Intel CPUs</button>
+  <button id="btnCpuAmd" class="amd-btn">AMD CPUs</button>
+</div>
+
+<!-- Conteúdo Intel -->
+<div id="intel" class="conteudo active">
+  <h2>Intel - Todas as Séries</h2>
+  <table id="tabelaIntel">
+    <tr><th>Série</th><th>Ano</th><th>Arquitetura</th><th>Exemplos</th></tr>
+    <tr><td>Pentium</td><td>1993</td><td>P5</td><td>Pentium 60, Pentium MMX</td></tr>
+    <tr><td>Pentium Pro</td><td>1995</td><td>P6</td><td>Pentium Pro</td></tr>
+    <tr><td>Pentium II</td><td>1997</td><td>P6</td><td>Pentium II 233 MHz</td></tr>
+    <tr><td>Pentium III</td><td>1999</td><td>P6</td><td>Pentium III Coppermine</td></tr>
+    <tr><td>Pentium 4</td><td>2000</td><td>NetBurst</td><td>Pentium 4 1.5 GHz</td></tr>
+    <tr><td>Pentium D</td><td>2005</td><td>NetBurst Dual</td><td>Pentium D 820</td></tr>
+    <tr><td>Pentium Gold</td><td>2017</td><td>Kaby Lake / Coffee Lake</td><td>Pentium Gold G5400, G6400, G7400</td></tr>
+    <tr><td>Core 2 Duo/Quad</td><td>2006</td><td>Core</td><td>E6600, Q6600</td></tr>
+    <tr><td>Core i3/i5/i7 1ª gen</td><td>2008</td><td>Nehalem</td><td>i7-920</td></tr>
+    <tr><td>Core i3/i5/i7 2ª gen</td><td>2011</td><td>Sandy Bridge</td><td>i5-2500K</td></tr>
+    <tr><td>Core i3/i5/i7 4ª gen</td><td>2013</td><td>Haswell</td><td>i7-4770K</td></tr>
+    <tr><td>Core i3/i5/i7 6ª gen</td><td>2015</td><td>Skylake</td><td>i7-6700K</td></tr>
+    <tr><td>Core i3/i5/i7/i9 8ª gen</td><td>2017</td><td>Coffee Lake</td><td>i9-9900K</td></tr>
+    <tr><td>Core i3/i5/i7/i9 10ª gen</td><td>2020</td><td>Comet Lake</td><td>i7-10700K</td></tr>
+    <tr><td>Core i3/i5/i7/i9 12ª gen</td><td>2021</td><td>Alder Lake</td><td>i9-12900K</td></tr>
+    <tr><td>Core i3/i5/i7/i9 14ª gen</td><td>2023</td><td>Raptor Lake Refresh</td><td>i9-14900K</td></tr>
+  </table>
+</div>
+
+<!-- Conteúdo AMD CPUs -->
+<div id="cpuAmd" class="conteudo">
+  <h2>AMD - Todas as Séries</h2>
+  <table id="tabelaCpuAmd">
+    <tr><th>Série</th><th>Ano</th><th>Arquitetura</th><th>Exemplos</th></tr>
+    <tr><td>K5</td><td>1996</td><td>K5</td><td>PR75, PR100</td></tr>
+    <tr><td>K6</td><td>1997</td><td>K6</td><td>K6-2, K6-III</td></tr>
+    <tr><td>Athlon</td><td>1999</td><td>K7</td><td>Athlon Thunderbird</td></tr>
+    <tr><td>Athlon XP</td><td>2001</td><td>K7 refinado</td><td>Athlon XP 1800+</td></tr>
+    <tr><td>Athlon 64</td><td>2003</td><td>K8</td><td>Athlon 64 3200+</td></tr>
+    <tr><td>Athlon 64 X2</td><td>2005</td><td>K8 Dual</td><td>Athlon 64 X2 3800+</td></tr>
+    <tr><td>Phenom</td><td>2007</td><td>K10</td><td>Phenom II X4</td></tr>
+    <tr><td>FX Series</td><td>2011</td><td>Bulldozer</td><td>FX-8150</td></tr>
+    <tr><td>Ryzen 1000</td><td>2017</td><td>Zen</td><td>Ryzen 7 1800X</td></tr>
+    <tr><td>Ryzen 2000</td><td>2018</td><td>Zen+</td><td>Ryzen 5 2600</td></tr>
+    <tr><td>Ryzen 3000</td><td>2019</td><td>Zen 2</td><td>Ryzen 9 3900X</td></tr>
+    <tr><td>Ryzen 5000</td><td>2020</td><td>Zen 3</td><td>Ryzen 9 5950X</td></tr>
+    <tr><td>Ryzen 7000</td><td>2022</td><td>Zen 4</td><td>Ryzen 9 7950X</td></tr>
+    <tr><td>Ryzen 9000</td><td>2025</td><td>Zen 5</td><td>Ryzen 9 9950X</td></tr>
+  </table>
+</div>
+<!-- Rodapé das CPUs -->
+<footer>
+  <p>&copy; 2026 - Histórico de CPUs Intel vs AMD</p>
+  <p>Desenvolvido por Lucas | Dados de referência: Intel & AMD</p>
+</footer>
